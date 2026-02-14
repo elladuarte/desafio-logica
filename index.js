@@ -1,28 +1,23 @@
-let readlineSync = require("readline-sync");
-let nome = readlineSync.question("Digite o nome do herói: ");
-let quantidadeExperiencia = Number(
-  readlineSync.question("Digite os pontos de experiência: ")
-);
-let nivel = "";
+const readline = require("readline-sync");
+let nomeHeroi = readline.question("Digite o nome do herói: ");
+let nivelXp = Number(readline.question("Digite a quantidade de XP do herói: "));
+let nivel;
 
-if (quantidadeExperiencia <= 1000) {
+if (nivelXp < 1000) {
   nivel = "Ferro";
-} else if (quantidadeExperiencia >= 1001 && quantidadeExperiencia <= 2000) {
+} else if (nivelXp <= 2000) {
   nivel = "Bronze";
-} else if (quantidadeExperiencia >= 2001 && quantidadeExperiencia <= 5000) {
+} else if (nivelXp <= 5000) {
   nivel = "Prata";
-} else if (quantidadeExperiencia >= 5001 && quantidadeExperiencia <= 7000) {
+} else if (nivelXp <= 7000) {
   nivel = "Ouro";
-} else if (quantidadeExperiencia >= 7001 && quantidadeExperiencia <= 8000) {
+} else if (nivelXp <= 8000) {
   nivel = "Platina";
-} else if (quantidadeExperiencia >= 8001 && quantidadeExperiencia <= 9000) {
+} else if (nivelXp <= 9000) {
   nivel = "Ascendente";
-} else if (quantidadeExperiencia >= 9001 && quantidadeExperiencia <= 10000) {
+} else if (nivelXp <= 10000) {
   nivel = "Imortal";
-} else if (quantidadeExperiencia >= 10001) {
+} else {
   nivel = "Radiante";
 }
-
-console.log(`O Herói de nome ${nome} está no nível de ${nivel} e sua quantidade de XP é igual a
-    ${quantidadeExperiencia}XP!
-`);
+console.log(`O herói de nome ${nomeHeroi} está no nível ${nivel}.`);
